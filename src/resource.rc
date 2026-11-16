@@ -1,0 +1,50 @@
+#pragma code_page(65001)
+#include <windows.h>
+#include "resource.h"
+
+/* Embedded application icon and Windows visual styles manifest */
+IDI_APP_ICON ICON "app.ico"
+1 24 "app.manifest"
+
+/* Menu Management Dialog */
+IDD_MANAGE_DLG DIALOGEX 0, 0, 340, 236
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Manage Menu"
+FONT 9, "Segoe UI", 400, 0, 0x1
+BEGIN
+    CONTROL         "", IDC_TREE_ITEMS, "SysTreeView32",
+                    TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | TVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,
+                    8, 8, 224, 194
+    PUSHBUTTON      "Add Application...", IDC_BTN_ADD_APP, 240, 8, 92, 16
+    PUSHBUTTON      "Add Folder...", IDC_BTN_ADD_FOLDER, 240, 28, 92, 16
+    PUSHBUTTON      "Add Submenu...", IDC_BTN_ADD_SUBMENU, 240, 48, 92, 16
+    PUSHBUTTON      "Add Separator", IDC_BTN_ADD_SEP, 240, 68, 92, 16
+    PUSHBUTTON      "Edit...", IDC_BTN_EDIT, 240, 94, 92, 16
+    PUSHBUTTON      "Move Up", IDC_BTN_UP, 240, 114, 92, 16
+    PUSHBUTTON      "Move Down", IDC_BTN_DOWN, 240, 134, 92, 16
+    PUSHBUTTON      "Delete", IDC_BTN_DELETE, 240, 154, 92, 16
+    LTEXT           "", IDC_LBL_PREVIEW, 8, 208, 224, 20, SS_PATHELLIPSIS | SS_NOPREFIX
+    DEFPUSHBUTTON   "OK", IDOK, 236, 212, 46, 16
+    PUSHBUTTON      "Cancel", IDCANCEL, 286, 212, 46, 16
+END
+
+/* Add / Edit Menu Entry Dialog */
+IDD_EDIT_DLG DIALOGEX 0, 0, 290, 156
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit Entry"
+FONT 9, "Segoe UI", 400, 0, 0x1
+BEGIN
+    LTEXT           "Type:", IDC_LBL_TYPE, 10, 12, 68, 10
+    COMBOBOX        IDC_COMBO_TYPE, 82, 10, 198, 80, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Name:", IDC_LBL_NAME, 10, 32, 68, 10
+    EDITTEXT        IDC_EDIT_NAME, 82, 30, 198, 14, ES_AUTOHSCROLL | WS_BORDER | WS_TABSTOP
+    LTEXT           "Target:", IDC_LBL_TARGET, 10, 52, 68, 10
+    EDITTEXT        IDC_EDIT_TARGET, 82, 50, 144, 14, ES_AUTOHSCROLL | WS_BORDER | WS_TABSTOP
+    PUSHBUTTON      "Browse...", IDC_BTN_BROWSE, 230, 49, 50, 16
+    LTEXT           "Arguments:", IDC_LBL_ARGS, 10, 72, 68, 10
+    EDITTEXT        IDC_EDIT_ARGS, 82, 70, 198, 14, ES_AUTOHSCROLL | WS_BORDER | WS_TABSTOP
+    LTEXT           "Parent Menu:", IDC_LBL_PARENT, 10, 92, 68, 10
+    COMBOBOX        IDC_COMBO_PARENT, 82, 90, 198, 100, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK", IDOK, 176, 130, 50, 16
+    PUSHBUTTON      "Cancel", IDCANCEL, 230, 130, 50, 16
+END
