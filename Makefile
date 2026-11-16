@@ -8,8 +8,8 @@ SRC_DIR = src
 OBJ_DIR = obj
 TARGET  = QuickTray.exe
 
-CFLAGS  = -O2 -std=gnu11 -DUNICODE -D_UNICODE -D_WIN32_WINNT=0x0601 -D_WIN32_IE=0x0800 -finput-charset=UTF-8 -I$(SRC_DIR)
-LDFLAGS = -s -mwindows -municode
+CFLAGS  = -O2 -s -std=gnu11 -DUNICODE -D_UNICODE -D_WIN32_WINNT=0x0601 -D_WIN32_IE=0x0800 -finput-charset=UTF-8 -I$(SRC_DIR)
+LDFLAGS = -mwindows -municode
 LIBS    = -luser32 -lgdi32 -lshell32 -lcomctl32 -lcomdlg32 -lole32 -luuid -ladvapi32 -luxtheme -lshlwapi
 
 SRCS    = $(SRC_DIR)/main.c \

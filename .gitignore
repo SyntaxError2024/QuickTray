@@ -1,10 +1,5 @@
-/*
-
-!src/
-!docs/
-!Makefile
-!build.bat
-!README.md
-!.gitignore
-!*.exe
-
+/.aistudio
+/.env.example
+*.html
+*.json
+*.ts
